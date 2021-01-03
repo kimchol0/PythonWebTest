@@ -10,7 +10,11 @@ def setcookie(request):
                                salt='jksdfbhalefijk',
                                max_age=24 * 60 * 60,
                                path='/student/hello/')
+    response.delete_cookie('uname',path='/student/hello')
     return response
 def getcookie(request):
-    uname = request.get_signed_cookie('uname',salt='jksdfbhalefijk')
-    return HttpResponse(uname)
+    if 'uname' in request.COOKIES:
+        uname = request.get_signed_cookie('uname',salt='jksdfbhalefijk')
+        return HttpResponse(uname)
+    else :
+        return HttpResponse('当前Cookie信息不存在！')
