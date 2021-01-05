@@ -18,7 +18,10 @@ def getsession(request):
     uname = request.session['uname']
     return HttpResponse(uname)
 
-
+class User(object):
+    def __init__(self,uname,pwd):
+        self.uname = uname
+        self.pwd = pwd
 def login(request):
     if request.method=='GET':
         return render(request,'loginone.html')
@@ -26,16 +29,19 @@ def login(request):
         #接收请求参数
         uname = request.POST.get('uname','')
         pwd = request.POST.get('pwd','')
-
+        import jsonpickle
         #判断
         if uname == 'zhangsan' and pwd=='123':
-            request.session['login'] = uname
+            user = User(uname,pwd)
+            request.session['login'] = jsonpickle.dumps(user)
             return HttpResponseRedirect('/one/usercenter/')
         return HttpResponseRedirect('/one/login/')
 
 
 def usercenter(request):
+    import jsonpickle
     #获取session中的数据
-    uname = request.session['login']
-    return render(request,'center.html',{'uname':uname})
+    user = request.session['login']
+    uuser = jsonpickle.loads(user)
+    return render(request,'center.html',{'uname':uuser.uname})
     return None
