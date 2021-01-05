@@ -33,6 +33,7 @@ def login(request):
         #判断
         if uname == 'zhangsan' and pwd=='123':
             user = User(uname,pwd)
+            # jsonpickle.dumps(user)表示将python对象序列化成普通字符串
             request.session['login'] = jsonpickle.dumps(user)
             return HttpResponseRedirect('/one/usercenter/')
         return HttpResponseRedirect('/one/login/')
@@ -42,6 +43,7 @@ def usercenter(request):
     import jsonpickle
     #获取session中的数据
     user = request.session['login']
+    # jsonpickle.loads(user)将普通字符串反序列化成对象
     uuser = jsonpickle.loads(user)
     return render(request,'center.html',{'uname':uuser.uname})
     return None
