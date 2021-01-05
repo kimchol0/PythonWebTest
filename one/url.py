@@ -5,4 +5,6 @@ from . import views
 urlpatterns = [
     re_path(r'^$',views.setsession),
     re_path(r'^get/$',views.getsession),
+    re_path(r'^login/$',views.login),
+    re_path(r'^usercenter/$', views.usercenter),
 ]
