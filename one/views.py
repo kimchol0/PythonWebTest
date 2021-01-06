@@ -1,4 +1,4 @@
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, request
 from django.shortcuts import render
 
 # Create your views here.
@@ -47,3 +47,27 @@ def usercenter(request):
     uuser = jsonpickle.loads(user)
     return render(request,'center.html',{'uname':uuser.uname})
     return None
+
+
+def logintwo(request):
+    if request.method == 'GET':
+        return render(request,'logintwo.html')
+    else:
+        #接受请求参数
+        uname = request.POST.get('uname','')
+        pwd = request.POST.get('pwd','')
+        print('接受请求参数：'+uname+','+pwd)
+        #判断
+        if uname == 'zhangsan' and pwd == '123':
+            request.session['login'] = uname
+            return HttpResponseRedirect('/one/usercentertwo')
+            print('if里面：' + uname + ',' + pwd)
+    return HttpResponseRedirect('/one/logintwo')
+    print('else里面：' + uname + ',' + pwd)
+
+
+def usercentertwo(request):
+    #获取session中的数据
+    uname = request.session['login']
+    return render(request,'center.html',{'uname':uname})
+    print('获取Session数据：' + uname + ',' + pwd)
