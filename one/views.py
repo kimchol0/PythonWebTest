@@ -56,14 +56,18 @@ def logintwo(request):
         #接受请求参数
         uname = request.POST.get('uname','')
         pwd = request.POST.get('pwd','')
+        import jsonpickle
         #判断
         if uname == 'zhangsan' and pwd == '123':
-            request.session['login'] = uname
+            user = User(uname,pwd)
+            request.session['login'] = jsonpickle.dumps(user)
             return HttpResponseRedirect('/one/usercentertwo')
     return HttpResponseRedirect('/one/logintwo')
 
 
 def usercentertwo(request):
     #获取session中的数据
-    uname = request.session['login']
-    return render(request,'center.html',{'uname':uname})
+    user = request.session['login']
+    import jsonpickle
+    uuser = jsonpickle.loads(user)
+    return render(request,'center.html',{'uname':uuser.uname})
