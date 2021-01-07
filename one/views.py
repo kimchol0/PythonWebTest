@@ -22,6 +22,10 @@ class User(object):
     def __init__(self,uname,pwd):
         self.uname = uname
         self.pwd = pwd
+    def __getstate__(self):
+        data = self.__dict__.copy()
+        del data['pwd']
+        return data
 def login(request):
     if request.method=='GET':
         return render(request,'loginone.html')
@@ -70,4 +74,4 @@ def usercentertwo(request):
     user = request.session['login']
     import jsonpickle
     uuser = jsonpickle.loads(user)
-    return render(request,'center.html',{'uname':uuser.uname})
+    return render(request,'center.html',{'u':uuser})
