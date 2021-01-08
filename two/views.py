@@ -21,4 +21,5 @@ class StaticView(View):
         if not os.path.exists(filedir):
             raise Http404()
         # mimetypes
-        return FileResponse(open(filedir,'rb'),content_type='image/png')
+        # *.*表示匹配任意扩展名
+        return FileResponse(open(filedir,'rb'),content_type='*/*')
