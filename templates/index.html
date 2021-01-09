@@ -4,12 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="{% static 'my.css' %}" type="text/css"></link>
+    <script type="text/javascript" src="{% static 'my.js' %}"></script>
 </head>
 <body>
     <img src="{% static  'PCfb_5bf082d29588c07f842ccde3f97243ea.png' %}">
     <form action="/two/" method="post">
         {% csrf_token %}
-        <input type="submit">
+        <input type="submit" id="btn">
     </form>
 </body>
 </html>
