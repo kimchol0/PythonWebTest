@@ -43,5 +43,9 @@
 csrf_token
 <br/>
 <hr/>
+{% autoescape off %}
+{{ loc }}
+{% endautoescape %}
+<!-- 自动转义为off时解析成标签，故网页可实现h3标题的效果-->
 </body>
 </html>

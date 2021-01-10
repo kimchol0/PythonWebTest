@@ -11,4 +11,5 @@ class GetDataView(View):
                                                'numlist':[1,2,3,4,5],
                                                'current':datetime.datetime.today(),
                                                'str':'hello','score': 88 ,
+                                               'loc': '<h3>北京</h3>',
                                                })
