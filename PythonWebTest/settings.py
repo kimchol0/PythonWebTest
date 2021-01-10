@@ -73,6 +73,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'five.my_context_processors.getData',
+                'five.my_context_processors.getMenuInfo',
             ],
         },
     },

@@ -3,8 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        ul{
+            list-style-type: none;
+        }
+        li{
+            float: left;
+            padding-right: 10px;
+        }
+    </style>
 </head>
 <body>
 {{ uname }}
+
+<ul>
+    {% for m in menu %}
+        <li><a href="#">{{ m.mname }}</a></li>
+    {% endfor %}
+</ul>
 </body>
 </html>
