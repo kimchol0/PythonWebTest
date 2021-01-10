@@ -6,7 +6,6 @@ from django.views import View
 
 class IndexView(View):
     def get(self,request):
-        import datetime
-        d = datetime.datetime.today()
-        urlstr = '<h3>北京</h3>'
-        return render(request,'index2.html',{'num':8,'str':'ab cd ef','d':d,'urlstr':urlstr})
+        content = "### 自定义过滤器"
+        str = "abcdef"
+        return render(request,'index2.html',{'c':content,'str':str})
