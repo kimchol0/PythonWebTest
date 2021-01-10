@@ -10,5 +10,5 @@ class GetDataView(View):
         return render(request,'getdata1.html',{'user':{'uname':'zhangsan','pwd':'123'},
                                                'numlist':[1,2,3,4,5],
                                                'current':datetime.datetime.today(),
-                                               'str':'hello',
+                                               'str':'hello','score': 88 ,
                                                })

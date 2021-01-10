@@ -28,5 +28,14 @@
 {% empty %}
     无记录
 {% endfor %}
+<br/>
+<hr/>
+{% if score > 90 %}
+    优秀
+{% elif score > 80 %}
+    良好
+{% else %}
+    再接再厉
+{% endif %}
 </body>
 </html>
