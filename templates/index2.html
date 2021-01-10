@@ -8,6 +8,7 @@
 {{ num|add:'2' }}<br/>
 {{ str|capfirst}}<br/>
 {{ d|date:'Y-m-d H:i:s' }}<br/>
-{{ num|divisibleby:'2' }}<!-- 如果num能被2整除，返回True -->
+{{ num|divisibleby:'2' }}<!-- 如果num能被2整除，返回True --><br/>
+{{ urlstr|safe }}<br/><!-- 进行html标签转换，此时页面显示H3的样式 -- >
 </body>
 </html>
