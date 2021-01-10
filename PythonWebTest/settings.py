@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'two',
     'three',
     'four',
+    'five',
 ]
 
 MIDDLEWARE = [
@@ -71,6 +72,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'five.my_context_processors.getData',
             ],
         },
     },
