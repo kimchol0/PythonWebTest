@@ -21,5 +21,12 @@
 {% for k,v in user.items %}
     {{ k }}-{{ v }}<br/>
 {% endfor %}
+<br/>
+<hr/>
+{% for foo in hello %}
+    {{ foo }}
+{% empty %}
+    无记录
+{% endfor %}
 </body>
 </html>
