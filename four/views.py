@@ -6,4 +6,6 @@ from django.views import View
 
 class IndexView(View):
     def get(self,request):
-        return render(request,'index2.html',{'num':8,'str':'abcdef'})
+        import datetime
+        d = datetime.datetime.today()
+        return render(request,'index2.html',{'num':8,'str':'abcdef','d':d})
