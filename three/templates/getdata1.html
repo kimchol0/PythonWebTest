@@ -16,5 +16,10 @@
     <!-- 序号倒序 -->
     {{ forloop.revcounter }}-{{ n }}<br/>
 {% endfor %}
+<br/>
+<hr/>
+{% for k,v in user.items %}
+    {{ k }}-{{ v }}<br/>
+{% endfor %}
 </body>
 </html>

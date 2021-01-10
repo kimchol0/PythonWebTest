@@ -7,7 +7,7 @@ from django.views import View
 class GetDataView(View):
     def get(self,request):
         import datetime
-        return render(request,'getdata1.html',{'user':{'uname':'zhangsan'},
+        return render(request,'getdata1.html',{'user':{'uname':'zhangsan','pwd':'123'},
                                                'numlist':[1,2,3,4,5],
                                                'current':datetime.datetime.today(),
                                                'str':'hello',
