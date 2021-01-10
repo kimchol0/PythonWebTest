@@ -49,5 +49,21 @@ csrf_token
 <!-- 自动转义为off时解析成标签，故网页可实现h3标题的效果-->
 <!-- 但如果后台将loc变量改为一串代码，此时自动转义为off时解析成标签，则会动态执行script中的location.href，此时自动转义为off容易被攻击。 -->
 <!-- 自动转义改为on后，自动转义成普通字符串，不会动态执行script中的location.href-->
+<br/>
+<hr/>
+块标签单行注释{ #  # }
+{#{{ loc }}#}
+<br/>
+块标签多行注释
+{ % comment % }
+{ % endcomment % }
+
+{% comment %}
+{% autoescape on %}
+{{ loc }}
+{% endautoescape %}
+{% endcomment %}
+
+<br/>
 </body>
 </html>
