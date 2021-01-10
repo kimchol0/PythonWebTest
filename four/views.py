@@ -9,4 +9,4 @@ class IndexView(View):
         import datetime
         d = datetime.datetime.today()
         urlstr = '<h3>北京</h3>'
-        return render(request,'index2.html',{'num':8,'str':'abcdef','d':d,'urlstr':urlstr})
+        return render(request,'index2.html',{'num':8,'str':'ab cd ef','d':d,'urlstr':urlstr})

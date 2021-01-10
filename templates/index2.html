@@ -9,6 +9,7 @@
 {{ str|capfirst}}<br/>
 {{ d|date:'Y-m-d H:i:s' }}<br/>
 {{ num|divisibleby:'2' }}<!-- 如果num能被2整除，返回True --><br/>
-{{ urlstr|safe }}<br/><!-- 进行html标签转换，此时页面显示H3的样式 -- >
+{{ urlstr|safe }}<br/><!-- 进行html标签转换，此时页面显示H3的样式 -->
+{{ str|truncatewords:'2' }}<br/><!-- 以空格隔开，显示两个.其它的用省略号省略-->
 </body>
 </html>
