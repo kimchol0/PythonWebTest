@@ -57,6 +57,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'mymiddleware.my.Row1',
+    'mymiddleware.my.Row2',
+    'mymiddleware.my.Row3',
 ]
 
 ROOT_URLCONF = 'PythonWebTest.urls'
