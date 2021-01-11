@@ -1,4 +1,4 @@
-#!D:\workspace\Pycharm\PythonWebTest\venv\Scripts\python.exe
+#!D:\workspace\PyCharm\PythonWebTest\venv\Scripts\python.exe
 # When the django-admin.py deprecation ends, remove this script.
 import warnings
 
