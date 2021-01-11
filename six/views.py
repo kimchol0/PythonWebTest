@@ -12,7 +12,7 @@ class IndexView(View):
     def post(self,request):
         return HttpResponse('POST请求')
 
-@csrf_exempt
+@csrf_protect
 def Index2View(request):
     if request.method == 'GET':
             return render(request,'index4.html')
