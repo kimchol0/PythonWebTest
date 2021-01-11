@@ -17,3 +17,8 @@ class Index2View(View):
         t = Template('{{uname}}')
         str = t.render(RequestContext(request,dict_= None,processors=(getData,)))
         return HttpResponse(str)
+
+
+class Index3_View(View):
+    def get(self,request):
+        return render(request,'query.html')
