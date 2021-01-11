@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.min.js"></script>
+    <script>
+        function getAjax() {
+            $.get('/ajax/get/','uname=zhangsan&pwd=123',
+            function (data) {
+                alert(data.flag)
+            })
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="get请求" onclick="getAjax()"/>
+</body>
+</html>

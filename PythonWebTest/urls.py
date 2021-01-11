@@ -26,4 +26,5 @@ urlpatterns = [
     re_path(r'^five/',include('five.urls')),
     re_path(r'^six/',include('six.urls')),
     re_path(r'^biaodan/',include('biaodan.urls')),
+    re_path(r'^ajax/',include('ajax.urls')),
 ]

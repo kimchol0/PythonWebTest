@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'six',
     'seven',
     'biaodan',
+    'ajax',
 ]
 
 MIDDLEWARE = [
