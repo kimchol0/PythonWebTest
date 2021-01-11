@@ -6,4 +6,6 @@ urlpatterns = [
     re_path(r'^$',views.IndexView.as_view()),
     re_path(r'^get/$',views.GetView),
     re_path(r'^getajax/$',views.GetAjaxView),
+    re_path(r'^only/$',views.OnlyView),
+    re_path(r'^isExist/$',views.existView),
 ]
