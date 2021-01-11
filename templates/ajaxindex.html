@@ -6,7 +6,10 @@
     <script src="http://libs.baidu.com/jquery/1.9.0/jquery.min.js"></script>
     <script>
         function getAjax() {
-            $.get('/ajax/get/','uname=zhangsan&pwd=123',
+            //获取隐藏域中的csrftoken的值
+            var token = $('input[name="csrfmiddlewaretoken"]').val();
+            //发送post的ajax请求
+            $.post('/ajax/get/','uname=zhangsan&pwd=123&csrfmiddlewaretoken='+token,
             function (data) {
                 alert(data.flag)
             })
@@ -14,6 +17,7 @@
     </script>
 </head>
 <body>
+{% csrf_token %}
 <input type="button" value="get请求" onclick="getAjax()"/>
 </body>
 </html>

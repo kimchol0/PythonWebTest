@@ -11,7 +11,7 @@ class IndexView(View):
 
 
 def GetView(request):
-    uname = request.GET.get('uname')
-    pwd = request.GET.get('pwd')
+    uname = request.POST.get('uname')
+    pwd = request.POST.get('pwd')
     print(uname,pwd)
     return JsonResponse({'flag':True})
