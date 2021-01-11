@@ -1,7 +1,6 @@
 from django.contrib.auth import authenticate,login
 from django.http import HttpResponse
 from django.shortcuts import render
-
 # Create your views here.
 from django.views import View
 from .forms import *
@@ -26,3 +25,27 @@ class IndexView(View):
                 login(request,user)
                 return HttpResponse('登录成功')
         return HttpResponse('登录失败')
+
+
+class RegisterView(View):
+    def get(self,request):
+        #创建表单对象
+        clsForm = ClazzForm()
+        stuForm = StuForm()
+        return render(request,'biaodanregister.html',{'clsForm':clsForm,
+                                               'stuForm':stuForm})
+    def post(self,request):
+        #创建表单对象
+        clsForm = ClazzForm(request.POST)
+        stuForm = StuForm(request.POST)
+
+        #验证表单数据是否合法
+        if clsForm.is_valid()*stuForm.is_valid():
+            cls = clsForm.save()
+            #commit = False 事务未提交
+            stu = stuForm.save(commit=False)
+            stu.clazz = cls
+            stu.save()
+            return HttpResponse('注册成功')
+
+        return HttpResponse('注册失败')
