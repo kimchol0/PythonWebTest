@@ -14,4 +14,6 @@ class IndexView(View):
 
 @csrf_exempt
 def Index2View(request):
-        return HttpResponse('Post...')
+    if request.method == 'GET':
+            return render(request,'index4.html')
+    return HttpResponse('Post...')
