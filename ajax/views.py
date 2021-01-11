@@ -15,3 +15,9 @@ def GetView(request):
     pwd = request.POST.get('pwd')
     print(uname,pwd)
     return JsonResponse({'flag':True})
+
+
+def GetAjaxView(request):
+    uname = request.GET.get('uname')
+    print(uname)
+    return JsonResponse({'flag':False})

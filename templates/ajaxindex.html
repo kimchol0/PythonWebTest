@@ -14,10 +14,23 @@
                 alert(data.flag)
             })
         }
+
+        function getAjax2() {
+            $.ajax({
+                    async:false,
+                    url:'/ajax/getajax/',
+                    type:'GET',
+                    data:{'uname':'lisi'},
+                    success:function (result) {
+                        alert(result.flag)
+                    }
+                })
+        }
     </script>
 </head>
 <body>
 {% csrf_token %}
 <input type="button" value="get请求" onclick="getAjax()"/>
+<input type="button" value="自定义ajax请求" onclick="getAjax2()"/>
 </body>
 </html>
