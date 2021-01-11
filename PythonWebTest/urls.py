@@ -24,4 +24,5 @@ urlpatterns = [
     re_path(r'^three/',include('three.urls')),
     re_path(r'^four/',include('four.urls')),
     re_path(r'^five/',include('five.urls')),
+    re_path(r'^six/',include('six.urls')),
 ]
