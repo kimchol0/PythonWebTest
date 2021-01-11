@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="/biaodan/login/" method="post">
+        {% csrf_token %}
+        {{ loginform.as_p }}
+        <!-- as_p 表示用p标签括起来 -->
+        <input type="submit" value="登录">
+    </form>
+</body>
+</html>

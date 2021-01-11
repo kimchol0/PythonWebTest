@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'five',
     'six',
     'seven',
+    'biaodan',
 ]
 
 MIDDLEWARE = [
