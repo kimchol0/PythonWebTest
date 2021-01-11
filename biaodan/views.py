@@ -45,7 +45,8 @@ class RegisterView(View):
             #commit = False 事务未提交
             stu = stuForm.save(commit=False)
             stu.clazz = cls
+            stu.password = stuForm.clean_password2()
             stu.save()
             return HttpResponse('注册成功')
-
-        return HttpResponse('注册失败')
+        return render(request,'biaodanregister.html',{'clsForm':clsForm,
+                                               'stuForm':stuForm})

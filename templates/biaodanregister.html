@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .error-msg{
+            color:red;
+        }
+    </style>
 </head>
 <body>
     <form action="/biaodan/register/" method="post">
@@ -11,6 +16,16 @@
             <label for=" {{ stuForm.sname.id_for_label }}">
                 {{ stuForm.sname.label }}
             </label>{{ stuForm.sname }}
+        </p>
+        <p>
+            <label for=" {{ stuForm.password.id_for_label }}">
+                {{ stuForm.password.label }}
+            </label>{{ stuForm.password }}
+        </p>
+        <p>
+            <label for=" {{ stuForm.password2.id_for_label }}">
+                {{ stuForm.password2.label }}
+            </label>{{ stuForm.password2 }}<span class="error-msg">{{ stuForm.errors.password2.0}}</span>
         </p>
         <p>
             <label for=" {{ clsForm.cname.id_for_label }}">

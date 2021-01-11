@@ -17,6 +17,7 @@ class Clazz(models.Model):
 class Stu(models.Model):
     sno = models.AutoField(primary_key=True)
     sname = models.CharField(max_length=30,verbose_name=u'姓名：')
+    password = models.CharField(max_length=30)
     clazz = models.ForeignKey(Clazz, on_delete=models.CASCADE)
 
     def __unicode__(self):
